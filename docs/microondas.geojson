@@ -1,23 +1,177 @@
 {
-    "type":"FeatureCollection",
-    "features":[
-        {
-            "type":"Feature",
-            "geometry":{
-                "type":"Point",
-                "coordinates":[4.621886173165128, -74.06988299679934]
+    {
+        "type":"FeatureCollection",
+        "features":[
+            {
+                "type":"Feature",
+                "geometry":{"type":"Point","coordinates":[4.621456, -74.076543]},
+                "properties":{
+                    "Tienda":"ElectroHogar Express",
+                    "PrecioDescuento":289900,
+                    "PrecioSinAhorro":329900,
+                    "Alto":27.5,
+                    "Ancho":48.3,
+                    "Profundidad":35.2,
+                    "Capacidad":23,
+                    "Modelo":"Samsung MG23K3515AW",
+                    "Potencia":800,
+                    "Voltaje":110,
+                    "Características":"Grill integrado y 8 programas automáticos"
+                }
             },
-            "properties":{
-                "PrecioDescuento":219900,
-                "PrecioSinAhorro":267900,
-                "Alto":25.8,
-                "Ancho":33.4,
-                "Profundidad":44,
-                "Capacidad":20,
-                "Modelo": "RMM-20",
-                "Potencia":700,
-                "Voltaje": 110
+            {
+                "type":"Feature",
+                "geometry":{"type":"Point","coordinates":[4.625678, -74.078901]},
+                "properties":{
+                    "Tienda":"TecnoHome Calle 45",
+                    "PrecioDescuento":419900,
+                    "PrecioSinAhorro":479900,
+                    "Alto":30.1,
+                    "Ancho":54.0,
+                    "Profundidad":38.5,
+                    "Capacidad":25,
+                    "Modelo":"LG NeoChef LCRT2010ST",
+                    "Potencia":1000,
+                    "Voltaje":110,
+                    "Características":"Tecnología Smart Inverter"
+                }
+            },
+            {
+                "type":"Feature",
+                "geometry":{"type":"Point","coordinates":[4.615432, -74.081234]},
+                "properties":{
+                    "Tienda":"Alkosto Sede 40",
+                    "PrecioDescuento":179900,
+                    "PrecioSinAhorro":219900,
+                    "Alto":25.0,
+                    "Ancho":43.0,
+                    "Profundidad":34.0,
+                    "Capacidad":20,
+                    "Modelo":"Mabe MM2020X",
+                    "Potencia":700,
+                    "Voltaje":110,
+                    "Características":"Descongelación automática"
+                }
+            },
+            {
+                "type":"Feature",
+                "geometry":{"type":"Point","coordinates":[4.619876, -74.085432]},
+                "properties":{
+                    "Tienda":"Ktronix Sede Universitaria",
+                    "PrecioDescuento":329900,
+                    "PrecioSinAhorro":379900,
+                    "Alto":28.4,
+                    "Ancho":50.1,
+                    "Profundidad":36.7,
+                    "Capacidad":22,
+                    "Modelo":"Panasonic NN-ST65JBPQ",
+                    "Potencia":950,
+                    "Voltaje":110,
+                    "Características":"Sensor de humedad"
+                }
+            },
+            {
+                "type":"Feature",
+                "geometry":{"type":"Point","coordinates":[4.617654, -74.090123]},
+                "properties":{
+                    "Tienda":"Falabella Electrodomésticos",
+                    "PrecioDescuento":689900,
+                    "PrecioSinAhorro":799900,
+                    "Alto":33.2,
+                    "Ancho":61.5,
+                    "Profundidad":45.0,
+                    "Capacidad":35,
+                    "Modelo":"Samsung MC35K7055CT",
+                    "Potencia":1200,
+                    "Voltaje":120,
+                    "Características":"Horno combinado con convección"
+                }
+            },
+            {
+                "type":"Feature",
+                "geometry":{"type":"Point","coordinates":[4.623456, -74.072345]},
+                "properties":{
+                    "Tienda":"Home Sentry",
+                    "PrecioDescuento":149900,
+                    "PrecioSinAhorro":199900,
+                    "Alto":24.5,
+                    "Ancho":42.0,
+                    "Profundidad":32.5,
+                    "Capacidad":17,
+                    "Modelo":"Oster OGG0701",
+                    "Potencia":700,
+                    "Voltaje":110,
+                    "Características":"Compacto para espacios pequeños"
+                }
+            },
+            {
+                "type":"Feature",
+                "geometry":{"type":"Point","coordinates":[4.627890, -74.074567]},
+                "properties":{
+                    "Tienda":"ElectroShop Carrera 10",
+                    "PrecioDescuento":259900,
+                    "PrecioSinAhorro":299900,
+                    "Alto":26.8,
+                    "Ancho":46.3,
+                    "Profundidad":35.8,
+                    "Capacidad":20,
+                    "Modelo":"Midea EM720CGL-P1",
+                    "Potencia":800,
+                    "Voltaje":110,
+                    "Características":"Panel digital táctil"
+                }
+            },
+            {
+                "type":"Feature",
+                "geometry":{"type":"Point","coordinates":[4.628765, -74.070987]},
+                "properties":{
+                    "Tienda":"La Curacao Electro",
+                    "PrecioDescuento":469900,
+                    "PrecioSinAhorro":519900,
+                    "Alto":29.7,
+                    "Ancho":55.5,
+                    "Profundidad":39.2,
+                    "Capacidad":27,
+                    "Modelo":"Daewoo KOR-6L5R",
+                    "Potencia":900,
+                    "Voltaje":110,
+                    "Características":"Temporizador digital"
+                }
+            },
+            {
+                "type":"Feature",
+                "geometry":{"type":"Point","coordinates":[4.612345, -74.088765]},
+                "properties":{
+                    "Tienda":"Jumbo Electro",
+                    "PrecioDescuento":389900,
+                    "PrecioSinAhorro":449900,
+                    "Alto":27.9,
+                    "Ancho":49.8,
+                    "Profundidad":37.4,
+                    "Capacidad":24,
+                    "Modelo":"LG MS4296ORS",
+                    "Potencia":1000,
+                    "Voltaje":120,
+                    "Características":"Diseño empotrable"
+                }
+            },
+            {
+                "type":"Feature",
+                "geometry":{"type":"Point","coordinates":[4.616543, -74.092109]},
+                "properties":{
+                    "Tienda":"Panamericana Centro Técnico",
+                    "PrecioDescuento":209900,
+                    "PrecioSinAhorro":259900,
+                    "Alto":25.8,
+                    "Ancho":33.4,
+                    "Profundidad":44.0,
+                    "Capacidad":20,
+                    "Modelo":"RMM-20",
+                    "Potencia":700,
+                    "Voltaje":110,
+                    "Características":"6 niveles de potencia"
+                }
             }
-        }
-    ]
+        ]
+    }
 }
