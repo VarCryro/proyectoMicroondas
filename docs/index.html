@@ -10,7 +10,17 @@
 </head>
 <body>
     <div id="map"></div>
-    
+
+    <div id="popup-info" class="popup-container hidden">
+    <button id="close-popup">✕</button>
+    <h2 id="popup-tienda"></h2>
+    <p><strong>Modelo:</strong> <span id="popup-modelo"></span></p>
+    <p><strong>Precio:</strong> $<span id="popup-precio"></span></p>
+    <p><strong>Capacidad:</strong> <span id="popup-capacidad"></span> L</p>
+    <p><strong>Potencia:</strong> <span id="popup-potencia"></span> W</p>
+    <p id="popup-caracteristicas"></p>
+    /div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
