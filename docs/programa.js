@@ -1,43 +1,63 @@
-// Inicializar el mapa
-var map = L.map('map').setView([4.62800694445335, -74.06591689106871], 13); // Coordenadas de Madrid
+// Inicialización del mapa
+var map = L.map('map', {
+    preferCanvas: true // Mejor rendimiento para muchos marcadores
+}).setView([4.62800694445335, -74.06591689106871], 13);
 
-// Añadir capa de OpenStreetMap
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+// Capa base de OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-var marker = L.marker([4.62800694445335, -74.06591689106871]).addTo(map);
-var circle = L.circle([4.62800694445335, -74.06591689106871], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 200
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-// Abrir el archivo GeoJSON
-// Javascript se ejecuta de tal manera que si una linea
-// de código se demora, se pasa a la siguiente sin esperar.
-//Esto puede generar problemas cuando se requiere secuencialidad
+// Función para formatear precios en COP
+const formatoMonetario = new Intl.NumberFormat('es-CO', {
+    style: 'currency',
+    currency: 'COP',
+    maximumFractionDigits: 0
+});
 
-async function cargarPuntos(){
+// Cargar y procesar datos GeoJSON
+async function cargarPuntos() {
+    try {
+        const response = await fetch('microondas.geojson');
+        if (!response.ok) throw new Error('Error HTTP: ' + response.status);
+        
+        const geojson = await response.json();
+        
+        geojson.features.forEach(feature => {
+            const [lng, lat] = feature.geometry.coordinates;
+            const propiedades = feature.properties;
 
-    var miArchivo = await fetch("microondas.geojson")
-    
-    //Convertir el contenido a json: objeto js    
-    var datos = await miArchivo.json();
-    //Obtener el arreglo de la llave features que es un conjunto
-    //de objetos tipo feature
-    let listaFeatures = datos["features"]
-    
-    //Obtener la geometria del primer elmento
+            // Crear contenido del popup
+            const popupContent = `
+                <div class="tienda-header">
+                    <h4>${propiedades.Tienda}</h4>
+                    <span class="modelo">${propiedades.Modelo}</span>
+                </div>
+                <div class="precios">
+                    <span class="precio-actual">${formatoMonetario.format(propiedades.PrecioDescuento)}</span>
+                    <span class="precio-anterior">${formatoMonetario.format(propiedades.PrecioSinAhorro)}</span>
+                </div>
+                <div class="especificaciones">
+                    <p>📏 ${propiedades.Alto}x${propiedades.Ancho}x${propiedades.Profundidad} cm</p>
+                    <p>⚡ ${propiedades.Potencia}W • ${propiedades.Voltaje}V</p>
+                    <p>${propiedades.Características}</p>
+                </div>
+            `;
 
-    
+            // Crear marcador interactivo
+            L.marker([lat, lng], {
+                riseOnHover: true
+            })
+            .addTo(map)
+            .bindPopup(popupContent);
+        });
 
-    for(let i = 0; i<10;i++){
-    
-        let misCoordenadas = listaFeatures[i]["geometry"]["coordinates"];
-        var miMarcador = L.marker(misCoordenadas);
-        miMarcador.addTo(map);
-    }  
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error al cargar los datos. Verifica la consola para más detalles.');
+    }
 }
-cargarPuntos();
+
+// Iniciar carga de datos
+document.addEventListener('DOMContentLoaded', cargarPuntos);

@@ -1,23 +1,77 @@
-#map {height: 400px; width: 100%;}
-.popup-container {
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    width: 300px;
-    background: white;
-    border: 2px solid #888;
-    border-radius: 8px;
-    padding: 16px;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.popup-container.hidden {
-    display: none;
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', system-ui, sans-serif;
 }
-#close-popup {
-    float: right;
-    background: transparent;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
+
+#map {
+    height: 100vh;
+    width: 100vw;
+    background: #f0f4f7; /* Color de fondo mientras carga */
+}
+
+/* Estilos avanzados para popups */
+.leaflet-popup-content {
+    min-width: 280px;
+    padding: 15px;
+    line-height: 1.6;
+}
+
+.tienda-header h4 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.modelo {
+    color: #7f8c8d;
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.precios {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.precio-actual {
+    color: #27ae60;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.precio-anterior {
+    color: #e74c3c;
+    text-decoration: line-through;
+    font-size: 0.95em;
+}
+
+.especificaciones {
+    color: #34495e;
+    font-size: 0.95em;
+}
+
+.especificaciones p {
+    margin: 8px 0;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 6px !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.leaflet-popup-tip {
+    background: white !important;
 }
