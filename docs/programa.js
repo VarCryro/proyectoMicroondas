@@ -41,24 +41,3 @@ async function cargarPuntos(){
     }  
 }
 cargarPuntos();
-
-for (let i = 0; i < datos.features.length; i++) {
-    const feature = datos.features[i];
-    const coords = feature.geometry.coordinates;
-    const props = feature.properties;
-
-    const marcador = L.marker([coords[1], coords[0]]).addTo(map);
-
-    marcador.on('click', () => {
-        document.getElementById("popup-info").classList.remove("hidden");
-        document.getElementById("popup-tienda").textContent = props.Tienda;
-        document.getElementById("popup-modelo").textContent = props.Modelo;
-        document.getElementById("popup-precio").textContent = props.PrecioDescuento.toLocaleString();
-        document.getElementById("popup-capacidad").textContent = props.Capacidad;
-        document.getElementById("popup-potencia").textContent = props.Potencia;
-        document.getElementById("popup-caracteristicas").textContent = props.Características;
-    });
-}
-document.getElementById("close-popup").addEventListener("click", () => {
-    document.getElementById("popup-info").classList.add("hidden");
-});
