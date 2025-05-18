@@ -19,7 +19,7 @@ const formatoMonetario = new Intl.NumberFormat('es-CO', {
 // Cargar y procesar datos GeoJSON
 async function cargarPuntos() {
     try {
-        const response = await fetch('microondas.geojson');
+                const response = await fetch("microondas.geojson");
         if (!response.ok) throw new Error('Error HTTP: ' + response.status);
         
         const geojson = await response.json();
